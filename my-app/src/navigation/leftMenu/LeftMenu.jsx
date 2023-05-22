@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link, Outlet } from "react-router-dom"
 import "./LeftMenu.scss"
-import Logo from "../../Image/7ye-7-logo kopyası/png/logo-no-background.png"
+import Logo from "../../Image/7ye-7-logo/png/logo-no-background.png"
 import { AiFillHome } from "react-icons/ai";
 import { TbSoccerField } from "react-icons/tb";
 import { MdCreateNewFolder } from "react-icons/md";
@@ -21,19 +21,19 @@ const LeftMenu = () => {
                     <div className='item'>
                         <AiFillHome className="icon" />
                         <Link to="/toHome">
-                            <p>Home</p>
+                            <p>Ana Sayfa</p>
                         </Link>
                     </div>
                     <div className='item'>
                         <TbSoccerField className="icon" />
                         <Link to="/Tactic">
-                            <p>Tactic</p>
+                            <p>Taktik</p>
                         </Link>
                     </div>
                     <div className='item'>
                         <MdCreateNewFolder className="icon" />
                         <Link to="/Managment">
-                            <p>Managment</p>
+                            <p>Menajer</p>
                         </Link>
                     </div>
                 </section>

@@ -1,6 +1,5 @@
-import React from 'react'
+import { useEffect, useState } from 'react'
 import "./Home.scss"
-import Heading from "../../Image/Pictures/HomePage.jpg"
 import One from "../../Image/Pictures/One.jpg"
 import Two from "../../Image/Pictures/Two.jpg"
 import Three from "../../Image/Pictures/Three.jpg"
@@ -12,59 +11,66 @@ import Eight from "../../Image/Pictures/Eight.jpg"
 import Nine from "../../Image/Pictures/Nine.jpg"
 import Ten from "../../Image/Pictures/Ten.jpg"
 import Eleven from "../../Image/Pictures/Eleven.jpg"
+import Twelve from "../../Image/Pictures/Twelve.jpg"
 import { TbArrowBigLeftLineFilled } from "react-icons/tb"
 import { TbArrowBigRightLineFilled } from "react-icons/tb"
 
 const Home = () => {
 
+    // State for catch the current item.
+    var currentItemID = 1
+    const [currentImage, setCurrentImage] = useState(null)
+
+
+    // List of images and list of texts.
     const imageList = [
         {
             id: 1,
-            picture: Heading
-        },
-        {
-            id: 2,
             picture: One
         },
         {
-            id: 3,
+            id: 2,
             picture: Two
         },
         {
-            id: 4,
+            id: 3,
             picture: Three
         },
         {
-            id: 5,
+            id: 4,
             picture: Four
         },
         {
-            id: 6,
+            id: 5,
             picture: Five
         },
         {
-            id: 7,
+            id: 6,
             picture: Six
         },
         {
-            id: 8,
+            id: 7,
             picture: Seven
         },
         {
-            id: 9,
+            id: 8,
             picture: Eight
         },
         {
-            id: 10,
+            id: 9,
             picture: Nine
         },
         {
-            id: 11,
+            id: 10,
             picture: Ten
         },
         {
-            id: 12,
+            id: 11,
             picture: Eleven
+        },
+        {
+            id: 12,
+            picture: Twelve
         },
     ]
     const textlist = [
@@ -119,34 +125,45 @@ const Home = () => {
 
     ]
 
-    const currentID = 5
 
-    imageList.map((item) => {
-        if (item.id === currentID) {
+    // Function for the catch last image ID.
+    const handleImageChange = () => {
+        imageList.filter(item => (item.id === currentItemID) && setCurrentImage(item.picture))
+    }
 
-        }
-    })
 
+    // Buttons for when user click the icons, change currentItemID.
+    const handleIncrease = () => {
+        currentItemID = currentItemID + 1
+        console.log(currentItemID)
+    }
+    const handleDecrease = () => {
+        currentItemID = currentItemID - 1
+        console.log(currentItemID)
+    }
+
+
+    useEffect(() => {
+        handleImageChange()
+    }, [currentItemID])
 
 
     return (
         <div className='home'>
-            <h1>Home</h1>
+            <h1>Ana Sayfa</h1>
             <div className='slider'>
                 <div className='images'>
-                    {
-                        imageList.map((item, index) => (
-                            <img key={index} className="item" src={item.picture} />
-                        ))
-                    }
+                    <TbArrowBigLeftLineFilled className='icon' onClick={() => handleDecrease()} />
+                    <img className='item' src={(currentImage !== null) ? currentImage : One} alt="Image" />
+                    <TbArrowBigRightLineFilled className='icon' onClick={() => handleIncrease()} />
                 </div>
                 <div className='texts'>
-
+                    <p>{textlist[currentItemID - 1].text}</p>
                 </div>
                 <div className='list'>
-                    <TbArrowBigLeftLineFilled className='icon' />
+                    <TbArrowBigLeftLineFilled className='icon' onClick={() => handleDecrease()} />
                     {Array.from({ length: imageList.length }, (_, i) => <section key={i} className='circle' />)}
-                    <TbArrowBigRightLineFilled className='icon' />
+                    <TbArrowBigRightLineFilled className='icon' onClick={() => handleIncrease()} />
                 </div>
             </div>
         </div>

@@ -17,8 +17,9 @@ import { TbArrowBigRightLineFilled } from "react-icons/tb"
 
 const Home = () => {
 
+
     // State for catch the current item.
-    var currentItemID = 1
+    const [currentItemID, setCurrentItemID] = useState(1)
     const [currentImage, setCurrentImage] = useState(null)
 
 
@@ -134,15 +135,36 @@ const Home = () => {
 
     // Buttons for when user click the icons, change currentItemID.
     const handleIncrease = () => {
-        currentItemID = currentItemID + 1
+        if (currentItemID === 12) {
+            setCurrentItemID(1)
+        } else {
+            setCurrentItemID(currentItemID + 1)
+        }
         console.log(currentItemID)
     }
     const handleDecrease = () => {
-        currentItemID = currentItemID - 1
+        if (currentItemID === 1) {
+            setCurrentItemID(12)
+        } else {
+            setCurrentItemID(currentItemID - 1)
+        }
         console.log(currentItemID)
     }
 
 
+    // Style for the current circle.
+    const circleStyle = {
+        backgroundColor: "rgb(0, 100, 0)",
+    }
+
+
+    // Change current item ID when click the circle's.
+    const handleClickCircle = (id) => {
+        setCurrentItemID(id)
+    }
+
+
+    // "useEffect" for make dynamic the images and texts.
     useEffect(() => {
         handleImageChange()
     }, [currentItemID])
@@ -153,16 +175,36 @@ const Home = () => {
             <h1>Ana Sayfa</h1>
             <div className='slider'>
                 <div className='images'>
-                    <TbArrowBigLeftLineFilled className='icon' onClick={() => handleDecrease()} />
-                    <img className='item' src={(currentImage !== null) ? currentImage : One} alt="Image" />
-                    <TbArrowBigRightLineFilled className='icon' onClick={() => handleIncrease()} />
+                    <button><TbArrowBigLeftLineFilled className='icon' onClick={() => handleDecrease()} /></button>
+                    {
+                        imageList.map(imageItem => {
+                            return (
+                                <img
+                                    key={`item_${imageItem.id}`}
+                                    className={`item${currentItemID === imageItem.id ? " active" : ""}`}
+                                    src={imageItem.picture}
+                                    alt="Image"
+                                />
+                            )
+                        })
+                    }
+                    <button><TbArrowBigRightLineFilled className='icon' onClick={() => handleIncrease()} /></button>
                 </div>
                 <div className='texts'>
                     <p>{textlist[currentItemID - 1].text}</p>
                 </div>
                 <div className='list'>
                     <TbArrowBigLeftLineFilled className='icon' onClick={() => handleDecrease()} />
-                    {Array.from({ length: imageList.length }, (_, i) => <section key={i} className='circle' />)}
+                    {
+                        // Array.from({ length: imageList.length }, (_, i) => <section key={i} className='circle' />)
+                        imageList.map((item, index) => <section
+                            key={index}
+                            id={item.id}
+                            className='circle'
+                            style={(currentItemID === item.id) ? circleStyle : null}
+                            onClick={() => handleClickCircle(item.id)}
+                        />)
+                    }
                     <TbArrowBigRightLineFilled className='icon' onClick={() => handleIncrease()} />
                 </div>
             </div>
@@ -170,4 +212,4 @@ const Home = () => {
     )
 }
 
-export default Home
+export default Home;

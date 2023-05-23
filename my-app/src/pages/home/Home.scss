@@ -23,21 +23,29 @@
             align-items: center;
             justify-content: center;
 
-            transition: all 1s ease;
-
             button {
                 border: none;
+
                 background-color: transparent;
+
                 padding: 0px;
             }
 
             .item {
                 height: 400px;
-                width: 650px;
-
+                width: 0;
+                opacity: 0;
                 border-radius: 20px;
-
                 object-fit: cover;
+
+                transition: all 1s ease;
+
+                box-shadow: rgba(0, 0, 0) 5px 5px 50px;
+
+                &.active {
+                    width: 650px;
+                    opacity: 1;
+                }
             }
 
             .icon {
@@ -52,15 +60,20 @@
         }
 
         .texts {
-            height: 275px;
+            height: auto;
             width: 600px;
 
             display: flex;
             align-items: center;
             justify-content: center;
+            text-align: center;
 
             font-size: 27.5px;
             font-weight: 600;
+
+            p {
+                margin: 40px 0px 10px 0px;
+            }
         }
 
         .list {
@@ -80,7 +93,7 @@
 
                 background-color: transparent;
 
-                border: solid 2px black;
+                border: solid 2px rgba(0, 100, 0);
                 border-radius: 50%;
 
                 cursor: pointer;
@@ -88,7 +101,9 @@
 
             .icon {
                 font-size: 30px;
+
                 cursor: pointer;
+
                 color: rgb(0, 100, 0);
             }
         }

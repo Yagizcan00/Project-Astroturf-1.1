@@ -14,46 +14,125 @@
 
         background-color: rgb(0, 200, 0);
 
-        box-shadow: rgba(0, 0, 0) 0px 5px 25px;
+        box-shadow: rgba(0, 0, 0) 0px 0px 15px;
 
-        border-top-right-radius: 25px;
-        border-bottom-right-radius: 25px;
+        border-top-right-radius: 10px;
+        border-bottom-right-radius: 10px;
+
+        .logo {
+            margin-top: 20px;
+
+            .item {
+                height: 100px;
+                width: 200px;
+
+                cursor: not-allowed;
+            }
+        }
 
         .menu {
             margin-top: 100px;
-        }
-    }
 
-    .logo {
-        margin-top: 20px;
+            .item {
+                margin: 25px 0px;
 
-        height: 100px;
-        width: 200px;
+                font-size: 25px;
 
-        cursor: not-allowed;
-    }
+                display: flex;
+                align-items: center;
 
-    .item {
-        margin: 25px 0px;
+                .icon {
+                    margin: 0px 10px;
 
-        font-size: 25px;
+                    color: rgb(0, 100, 0);
+                }
 
-        display: flex;
+                a {
+                    text-decoration: underline;
+                    color: rgb(0, 100, 0);
+                    font-weight: 700;
 
-        .icon {
-            margin: 0px 10px;
-
-            color: rgb(0, 100, 0);
-        }
-
-        a {
-            text-decoration: underline;
-            color: rgb(0, 100, 0);
-            font-weight: 700;
-
-            p {
-                margin: 0px;
+                    p {
+                        margin: 0px;
+                    }
+                }
             }
         }
     }
+
+
+
+}
+
+@media only screen and (max-width: 420px) {
+    .allpage {
+        display: flex;
+        flex-direction: column;
+        align-items: normal;
+
+        height: 100vh;
+        width: 100vw;
+
+        font-family: "Gill Sans";
+
+        .leftmenu {
+            height: 20vh;
+            width: 100vw;
+
+            border-top-right-radius: 0px;
+            border-bottom-right-radius: 25px;
+            border-bottom-left-radius: 25px;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+            box-shadow: rgba(0, 0, 0) 0px 0px 10px;
+
+            .logo {
+                margin-top: 0px;
+                margin-bottom: 10px;
+
+                .item {
+                    height: 75px;
+                    width: 150px;
+
+                    cursor: not-allowed;
+                }
+            }
+
+            .menu {
+                margin-top: 0px;
+
+                display: flex;
+
+                .item {
+                    margin: 5px 10px;
+
+                    font-size: 20px;
+
+                    display: flex;
+                    align-items: center;
+
+                    .icon {
+                        margin: 0px 5px;
+
+                        color: rgb(0, 100, 0);
+                    }
+
+                    a {
+                        text-decoration: underline;
+                        color: rgb(0, 100, 0);
+                        font-weight: 700;
+
+                        p {
+                            margin: 0px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
 }

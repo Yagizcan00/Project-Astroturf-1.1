@@ -1,11 +1,11 @@
 import React from 'react'
-import "./Tactic.css"
+import "./Tactic.scss"
 
 const Tactic = () => {
 
     return (
         <div className='tactic'>
-            <h1>Tactic</h1>
+
         </div>
     )
 }

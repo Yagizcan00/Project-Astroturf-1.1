@@ -173,7 +173,6 @@ const Home = () => {
 
     return (
         <div className='home'>
-            <h1>Ana Sayfa</h1>
             <div className='slider'>
                 <div className='images'>
                     <button><TbArrowBigLeftLineFilled className='icon' onClick={() => handleDecrease()} /></button>

@@ -13,8 +13,8 @@ const LeftMenu = () => {
         <div className='allpage'>
             <nav className='leftmenu'>
 
-                <div>
-                    <img className="logo" src={Logo} alt="Logo" />
+                <div className="logo">
+                    <img className="item" src={Logo} alt="Logo" />
                 </div>
 
                 <section className='menu'>

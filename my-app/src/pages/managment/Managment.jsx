@@ -1,11 +1,11 @@
 import React from 'react'
-import "./Managment.css"
+import "./Managment.scss"
 
 const Managment = () => {
 
     return (
         <div className='managment'>
-            <h1>Managment</h1>
+            <h1>Menajer</h1>
         </div>
     )
 }

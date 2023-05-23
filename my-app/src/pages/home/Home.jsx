@@ -15,6 +15,7 @@ import Twelve from "../../Image/Pictures/Twelve.jpg"
 import { TbArrowBigLeftLineFilled } from "react-icons/tb"
 import { TbArrowBigRightLineFilled } from "react-icons/tb"
 
+
 const Home = () => {
 
 
@@ -191,7 +192,16 @@ const Home = () => {
                     <button><TbArrowBigRightLineFilled className='icon' onClick={() => handleIncrease()} /></button>
                 </div>
                 <div className='texts'>
-                    <p>{textlist[currentItemID - 1].text}</p>
+                    {/* {
+                        textlist.map(textItem => {
+                            return (
+                                <p key={`item_${textItem.id}`} className={`p${currentItemID === textItem.id ? " active" : ""}`}>
+                                    {textItem.text}
+                                </p>
+                            )
+                        })
+                    } */}
+                    <p className='p'>{textlist[currentItemID - 1].text}</p>
                 </div>
                 <div className='list'>
                     <TbArrowBigLeftLineFilled className='icon' onClick={() => handleDecrease()} />

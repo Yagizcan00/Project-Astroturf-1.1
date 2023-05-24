@@ -21,7 +21,8 @@ const Home = () => {
 
     // State for catch the current item.
     const [currentItemID, setCurrentItemID] = useState(1)
-    const [currentImage, setCurrentImage] = useState(null)
+    const [leftImgID, setLeftImgID] = useState(currentItemID - 1)
+    const [rightImgID, setRightImgID] = useState(currentItemID + 1)
 
 
     // List of images and list of texts.
@@ -128,12 +129,6 @@ const Home = () => {
     ]
 
 
-    // Function for the catch last image ID.
-    const handleImageChange = () => {
-        imageList.filter(item => (item.id === currentItemID) && setCurrentImage(item.picture))
-    }
-
-
     // Buttons for when user click the icons, change currentItemID.
     const handleIncrease = () => {
         if (currentItemID === 12) {
@@ -141,7 +136,6 @@ const Home = () => {
         } else {
             setCurrentItemID(currentItemID + 1)
         }
-        console.log(currentItemID)
     }
     const handleDecrease = () => {
         if (currentItemID === 1) {
@@ -149,13 +143,13 @@ const Home = () => {
         } else {
             setCurrentItemID(currentItemID - 1)
         }
-        console.log(currentItemID)
     }
 
 
     // Style for the current circle.
     const circleStyle = {
         backgroundColor: "rgb(0, 100, 0)",
+        transition: "all 1s ease"
     }
 
 
@@ -165,33 +159,84 @@ const Home = () => {
     }
 
 
-    // "useEffect" for make dynamic the images and texts.
-    useEffect(() => {
-        handleImageChange()
-    }, [currentItemID])
-
-
     return (
         <div className='home'>
             <div className='slider'>
+
                 <div className='images'>
-                    <button><TbArrowBigLeftLineFilled className='icon' onClick={() => handleDecrease()} /></button>
+
+
+                    {/* <button><TbArrowBigLeftLineFilled className='icon' onClick={() => handleDecrease()} /></button> */}
+                    <button onClick={() => handleDecrease()}>
+                        {
+                            // <img className='left' src={imageList[leftImgID].picture} alt='left' />
+
+                            (currentItemID - 1 !== 0)
+                                ?
+                                imageList.map(item => (
+                                    <img
+                                        key={`left_${item.id}`}
+                                        className={`left${currentItemID - 1 === item.id ? " active" : ""}`}
+                                        src={item.picture}
+                                        alt="Left"
+                                    />
+                                ))
+                                :
+                                imageList.map(item => (
+                                    <img
+                                        key={`left_${item.id}`}
+                                        className={`left${12 === item.id ? " active" : ""}`}
+                                        src={item.picture}
+                                        alt="Left"
+                                    />
+                                ))
+                        }
+                    </button>
+
                     {
-                        imageList.map(imageItem => {
-                            return (
-                                <img
-                                    key={`item_${imageItem.id}`}
-                                    className={`item${currentItemID === imageItem.id ? " active" : ""}`}
-                                    src={imageItem.picture}
-                                    alt="Image"
-                                />
-                            )
-                        })
+                        imageList.map(imageItem => (
+                            <img
+                                key={`item_${imageItem.id}`}
+                                className={`item${currentItemID === imageItem.id ? " active" : ""}`}
+                                src={imageItem.picture}
+                                alt="Image"
+                            />
+                        ))
                     }
-                    <button><TbArrowBigRightLineFilled className='icon' onClick={() => handleIncrease()} /></button>
+
+                    <button onClick={() => handleIncrease()}>
+                        {
+                            // <img className='right' src={imageList[rightImgID].picture} alt='right' />
+
+                            (currentItemID + 1 !== 13)
+                                ?
+                                imageList.map(item => (
+                                    <img
+                                        key={`right_${item.id}`}
+                                        className={`right${currentItemID + 1 === item.id ? " active" : ""}`}
+                                        src={item.picture}
+                                        alt="Right"
+                                    />
+                                ))
+                                :
+                                imageList.map(item => (
+                                    <img
+                                        key={`right_${item.id}`}
+                                        className={`right${1 === item.id ? " active" : ""}`}
+                                        src={item.picture}
+                                        alt="Right"
+                                    />
+                                ))
+                        }
+                    </button>
+
+
+                    {/* <button><TbArrowBigRightLineFilled className='icon' onClick={() => handleIncrease()} /></button> */}
                 </div>
+
+
                 <div className='texts'>
-                    {/* {
+                    {
                         textlist.map(textItem => {
                             return (
                                 <p key={`item_${textItem.id}`} className={`p${currentItemID === textItem.id ? " active" : ""}`}>
@@ -199,9 +244,11 @@ const Home = () => {
                                 </p>
                             )
                         })
-                    } */}
-                    <p className='p'>{textlist[currentItemID - 1].text}</p>
+                    }
+                    {/* <p className='p'>{textlist[currentItemID - 1].text}</p> */}
                 </div>
+
+
                 <div className='list'>
                     <TbArrowBigLeftLineFilled className='icon' onClick={() => handleDecrease()} />
                     {
@@ -216,6 +263,7 @@ const Home = () => {
                     }
                     <TbArrowBigRightLineFilled className='icon' onClick={() => handleIncrease()} />
                 </div>
+
             </div>
         </div>
     )

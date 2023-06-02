@@ -1,0 +1,94 @@
+[
+    {
+        "id": 1,
+        "position": "Kaleci"
+    },
+    {
+        "id": 2,
+        "position": "Sol-Stoper"
+    },
+    {
+        "id": 3,
+        "position": "Merkez-Stoper"
+    },
+    {
+        "id": 4,
+        "position": "Sağ-Stoper"
+    },
+    {
+        "id": 5,
+        "position": "Sol-Bek"
+    },
+    {
+        "id": 6,
+        "position": "Sağ-Bek"
+    },
+    {
+        "id": 7,
+        "position": "Sol-Defansif-Ortasaha"
+    },
+    {
+        "id": 8,
+        "position": "Merkez-Defansif-Ortasaha"
+    },
+    {
+        "id": 9,
+        "position": "Sağ-Defansif-Ortasaha"
+    },
+    {
+        "id": 10,
+        "position": "Sol-Göbek-Ortasaha"
+    },
+    {
+        "id": 11,
+        "position": "Merkez-Göbek-Ortasaha"
+    },
+    {
+        "id": 12,
+        "position": "Sağ-Göbek-Ortasaha"
+    },
+    {
+        "id": 13,
+        "position": "Sol-Ofansif-Ortasaha"
+    },
+    {
+        "id": 14,
+        "position": "Merkez-Ofansif-Ortasaha"
+    },
+    {
+        "id": 15,
+        "position": "Sağ-Ofansif-Ortasaha"
+    },
+    {
+        "id": 16,
+        "position": "Sol-Kanat"
+    },
+    {
+        "id": 17,
+        "position": "Sağ-Kanat"
+    },
+    {
+        "id": 18,
+        "position": "Sol-Forvet"
+    },
+    {
+        "id": 19,
+        "position": "Merkez-Forvet"
+    },
+    {
+        "id": 20,
+        "position": "Sağ-Forvet"
+    },
+    {
+        "id": 21,
+        "position": "Sol-Santrafor"
+    },
+    {
+        "id": 22,
+        "position": "Merkez-Santrafor"
+    },
+    {
+        "id": 23,
+        "position": "Sağ-Santrafor"
+    }
+]

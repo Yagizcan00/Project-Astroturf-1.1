@@ -20,13 +20,15 @@
         border-bottom-right-radius: 10px;
 
         .logo {
-            margin-top: 20px;
+            margin: 20px 0px 0px 0px;
 
             .item {
                 height: 100px;
                 width: 200px;
 
                 cursor: not-allowed;
+
+                margin-left: 10px;
             }
         }
 
@@ -48,7 +50,7 @@
                 }
 
                 a {
-                    text-decoration: underline;
+                    text-decoration: none;
                     color: rgb(0, 100, 0);
                     font-weight: 700;
 

@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import "./Home.scss"
 import One from "../../Image/Pictures/One.jpg"
 import Two from "../../Image/Pictures/Two.jpg"
@@ -21,8 +21,6 @@ const Home = () => {
 
     // State for catch the current item.
     const [currentItemID, setCurrentItemID] = useState(1)
-    const [leftImgID, setLeftImgID] = useState(currentItemID - 1)
-    const [rightImgID, setRightImgID] = useState(currentItemID + 1)
 
 
     // List of images and list of texts.
@@ -167,7 +165,7 @@ const Home = () => {
 
 
                     {/* <button><TbArrowBigLeftLineFilled className='icon' onClick={() => handleDecrease()} /></button> */}
-                    <button onClick={() => handleDecrease()}>
+                    <button className='buttonLeft' onClick={() => handleDecrease()}>
                         {
                             // <img className='left' src={imageList[leftImgID].picture} alt='left' />
 
@@ -204,7 +202,7 @@ const Home = () => {
                         ))
                     }
 
-                    <button onClick={() => handleIncrease()}>
+                    <button className='buttonRight' onClick={() => handleIncrease()}>
                         {
                             // <img className='right' src={imageList[rightImgID].picture} alt='right' />
 

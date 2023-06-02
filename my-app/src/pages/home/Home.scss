@@ -25,22 +25,29 @@
             align-items: center;
             justify-content: center;
 
-            button {
+            // .icon {
+            //         font-size: 60px;
+
+            //         cursor: pointer;
+
+            //         margin: 0px 5px;
+
+            //         color: rgb(0, 100, 0);
+            //     }
+
+            .buttonLeft {
+                height: 350px;
+                width: 568.75px;
+
                 display: flex;
                 align-items: center;
                 border: none;
                 background-color: transparent;
                 padding: 0px;
 
-                // .icon {
-                //     font-size: 60px;
+                position: fixed;
 
-                //     cursor: pointer;
-
-                //     margin: 0px 5px;
-
-                //     color: rgb(0, 100, 0);
-                // }
+                z-index: 1;
 
                 .left {
                     height: 350px;
@@ -50,22 +57,38 @@
                     object-fit: cover;
                     cursor: pointer;
 
-                    margin-left: -550px;
+                    transition: all 1s ease;
+
+                    margin-left: -200px;
 
                     position: fixed;
 
-                    transition: all 1s ease;
-
                     box-shadow: rgba(0, 0, 0) 0px 0px 10px;
+
+                    z-index: 1;
 
                     &.active {
                         height: 350px;
                         width: 568.75px;
                         opacity: 0.5;
                         z-index: 1;
-                        
                     }
                 }
+            }
+
+            .buttonRight {
+                height: 350px;
+                width: 568.75px;
+
+                display: flex;
+                align-items: center;
+                border: none;
+                background-color: transparent;
+                padding: 0px;
+
+                position: fixed;
+
+                z-index: 2;
 
                 .right {
                     height: 350px;
@@ -76,11 +99,15 @@
                     cursor: pointer;
 
                     transition: all 1s ease;
-                    
+
                     position: fixed;
 
+                    margin-left: 200px;
+
                     box-shadow: rgba(0, 0, 0) 0px 0px 10px;
-                    
+
+                    z-index: 2;
+
                     &.active {
                         height: 350px;
                         width: 568.75px;

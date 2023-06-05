@@ -344,7 +344,7 @@ const Tactic = () => {
 
     // Download the div's screenshot part
     const ref = createRef(null);
-    const [image, takeScreenShot] = useScreenshot({
+    const [takeScreenShot] = useScreenshot({
         type: "image/jpeg",
         quality: 1.0
     });
@@ -448,13 +448,13 @@ const Tactic = () => {
 
             <div className="board">
                 <div className="field" ref={ref}>
-                    <CreateDraggableItem number="1" role={positionOne} colorOne={chosenColorOne} colorTwo={chosenColorTwo} checkDraggable={checkDraggable} width={width} height={height} />
-                    <CreateDraggableItem number="2" role={positionTwo} colorOne={chosenColorOne} colorTwo={chosenColorTwo} checkDraggable={checkDraggable} width={width} height={height} />
-                    <CreateDraggableItem number="3" role={positionThree} colorOne={chosenColorOne} colorTwo={chosenColorTwo} checkDraggable={checkDraggable} width={width} height={height} />
-                    <CreateDraggableItem number="4" role={positionFour} colorOne={chosenColorOne} colorTwo={chosenColorTwo} checkDraggable={checkDraggable} width={width} height={height} />
-                    <CreateDraggableItem number="5" role={positionFive} colorOne={chosenColorOne} colorTwo={chosenColorTwo} checkDraggable={checkDraggable} width={width} height={height} />
-                    <CreateDraggableItem number="6" role={positionSix} colorOne={chosenColorOne} colorTwo={chosenColorTwo} checkDraggable={checkDraggable} width={width} height={height} />
-                    <CreateDraggableItem number="7" role={positionSeven} colorOne={chosenColorOne} colorTwo={chosenColorTwo} checkDraggable={checkDraggable} width={width} height={height} />
+                    <CreateDraggableItem number="1" role={positionOne} colorOne={chosenColorOne} colorTwo={chosenColorTwo} checkDraggable={checkDraggable} width={width} height={height} formation={curentFormation} />
+                    <CreateDraggableItem number="2" role={positionTwo} colorOne={chosenColorOne} colorTwo={chosenColorTwo} checkDraggable={checkDraggable} width={width} height={height} formation={curentFormation} />
+                    <CreateDraggableItem number="3" role={positionThree} colorOne={chosenColorOne} colorTwo={chosenColorTwo} checkDraggable={checkDraggable} width={width} height={height} formation={curentFormation} />
+                    <CreateDraggableItem number="4" role={positionFour} colorOne={chosenColorOne} colorTwo={chosenColorTwo} checkDraggable={checkDraggable} width={width} height={height} formation={curentFormation} />
+                    <CreateDraggableItem number="5" role={positionFive} colorOne={chosenColorOne} colorTwo={chosenColorTwo} checkDraggable={checkDraggable} width={width} height={height} formation={curentFormation} />
+                    <CreateDraggableItem number="6" role={positionSix} colorOne={chosenColorOne} colorTwo={chosenColorTwo} checkDraggable={checkDraggable} width={width} height={height} formation={curentFormation} />
+                    <CreateDraggableItem number="7" role={positionSeven} colorOne={chosenColorOne} colorTwo={chosenColorTwo} checkDraggable={checkDraggable} width={width} height={height} formation={curentFormation} />
                 </div>
             </div>
         </div>
@@ -469,7 +469,7 @@ export default Tactic
 
 
 
-const CreateDraggableItem = ({ number, role, colorOne, colorTwo, checkDraggable, width, height }) => {
+const CreateDraggableItem = ({ number, role, colorOne, colorTwo, checkDraggable, width, height, formation }) => {
 
     // State for holding the changed positions.
     const [x, setX] = useState()
@@ -654,7 +654,7 @@ const CreateDraggableItem = ({ number, role, colorOne, colorTwo, checkDraggable,
     useEffect(() => {
         (width + height) > 1800 && updateRoleMid();
         ((width + height) < 1800 && (width + height) > 1000) && updateRoleMobile();
-    }, [role])
+    }, [role, formation])
 
     return (
         <Draggable

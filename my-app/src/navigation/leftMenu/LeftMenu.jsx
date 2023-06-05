@@ -30,12 +30,12 @@ const LeftMenu = () => {
                             <p>Taktik</p>
                         </Link>
                     </div>
-                    <div className='item'>
+                    {/* <div className='item'>
                         <MdCreateNewFolder className="icon" />
                         <Link to="/Managment">
                             <p>Menajer</p>
                         </Link>
-                    </div>
+                    </div> */}
                 </section>
             </nav>
 

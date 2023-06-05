@@ -115,6 +115,7 @@
                     display: flex;
                     align-items: center;
                     text-align: center;
+                    justify-content: center;
 
                     height: 40px;
                     width: 75px;
@@ -281,7 +282,7 @@
                 border-radius: 50%;
                 border: 2px solid black;
 
-                position: fixed;
+                position: absolute;
 
                 p {
                     font-size: 20px;
@@ -436,9 +437,10 @@
                         display: flex;
                         align-items: center;
                         text-align: center;
+                        justify-content: center;
 
                         height: 40px;
-                        width: 70px;
+                        width: 75px;
 
                         font-size: 22.5px;
                         font-weight: 700;

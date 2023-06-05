@@ -94,10 +94,10 @@
                     text-align: center;
 
                     height: 50px;
-                    width: 150px;
+                    width: 130px;
 
                     font-size: 25px;
-                    font-weight: 700;
+                    font-weight: 600;
                     color: rgb(0, 100, 0);
 
                     background-color: transparent;
@@ -116,7 +116,7 @@
                     align-items: center;
                     text-align: center;
 
-                    height: 50px;
+                    height: 40px;
                     width: 75px;
 
                     font-size: 25px;
@@ -138,6 +138,7 @@
                     display: flex;
                     flex-direction: column;
                     align-items: center;
+                    justify-content: center;
 
                     .formationlist {
                         margin-top: 10px;
@@ -193,7 +194,7 @@
 
                 border: none;
 
-                font-size: 20px;
+                font-size: 22.5px;
                 font-weight: 700;
                 color: rgb(0, 100, 0);
 
@@ -224,22 +225,27 @@
                 justify-content: flex-start;
 
                 height: 50px;
-                width: 150px;
+                width: 185px;
 
                 background-color: transparent;
 
                 border: none;
 
-                font-size: 25px;
+                font-size: 22.5px;
                 font-weight: 700;
                 color: rgb(0, 100, 0);
 
                 margin: 0;
                 padding: 0;
 
-                text-decoration: underline;
-
                 cursor: pointer;
+
+                .downloadIcon {
+                    font-size: 40px;
+
+                    border: 2px solid rgb(0, 100, 0);
+                    border-radius: 10px;
+                }
             }
         }
     }
@@ -314,6 +320,319 @@
 
 @media only screen and (max-width: 420px) {
     .tactic {
-        display: none;
+        height: 80vh;
+        width: 100vw;
+
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+
+        .parameters {
+            height: auto;
+            width: 100vw;
+
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+
+            .colorSelection {
+                display: flex;
+                flex-direction: column;
+
+                margin-top: 40px;
+                margin-left: 2vw;
+
+                .chooseColor {
+                    display: flex;
+                    justify-content: center;
+                    flex-direction: row;
+                    align-items: center;
+
+                    .colorOne {
+                        display: flex;
+                        justify-content: center;
+                    }
+
+                    .colorTwo {
+                        display: flex;
+                        justify-content: center;
+                    }
+
+                    .palateButton {
+                        display: flex;
+                        align-items: center;
+                        justify-content: space-between;
+
+                        height: 50px;
+                        width: 130px;
+
+                        font-size: 22.5px;
+                        font-weight: 600;
+                        color: rgb(0, 100, 0);
+
+                        background-color: transparent;
+
+                        cursor: pointer;
+
+                        // border: 2px solid rgb(0, 100, 0);
+                        border: none;
+                        border-radius: 20px;
+
+                        margin: 0px;
+                        padding: 0px;
+                    }
+
+                    .chosenColor {
+                        height: 25px;
+                        width: 25px;
+                        background-color: white;
+
+                        border: 2px solid rgb(0, 100, 0);
+                        border-radius: 25%;
+                    }
+                }
+
+                .active {
+                    display: flex;
+                    margin-top: 10px;
+                }
+
+                .inactive {
+                    display: none;
+                }
+            }
+
+            .formationSelection {
+                margin-top: 0px;
+                margin-left: 2vw;
+
+                .chooseFormation {
+                    display: flex;
+
+                    .formationLabel {
+                        display: flex;
+                        align-items: center;
+                        text-align: center;
+
+                        height: 50px;
+                        width: 110px;
+
+                        font-size: 22.5px;
+                        font-weight: 600;
+                        color: rgb(0, 100, 0);
+
+                        background-color: transparent;
+
+                        cursor: pointer;
+
+                        // border: 2px solid rgb(0, 100, 0);
+                        border: none;
+                        border-radius: 20px;
+
+                        margin: 0px;
+                    }
+
+                    .currentFormaiton {
+                        display: flex;
+                        align-items: center;
+                        text-align: center;
+
+                        height: 40px;
+                        width: 70px;
+
+                        font-size: 22.5px;
+                        font-weight: 700;
+                        color: rgb(0, 100, 0);
+
+                        background-color: transparent;
+
+                        cursor: pointer;
+
+                        border: 2px solid rgb(0, 100, 0);
+                        border-radius: 10px;
+                    }
+
+                    .showFormation {
+                        width: 90px;
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        justify-content: center;
+
+                        .formationlist {
+                            margin-top: 10px;
+
+                            display: flex;
+                            flex-wrap: wrap;
+                            justify-content: center;
+
+                            height: auto;
+                            width: 300px;
+
+                            section {
+                                display: flex;
+                                align-items: center;
+                                justify-content: center;
+
+                                font-size: 20px;
+                                font-weight: 600;
+                                margin: 5px;
+
+                                border: 2px solid rgb(0, 100, 0);
+                                border-radius: 7.5px;
+
+                                height: 30px;
+                                width: 60px;
+
+                                color: rgb(0, 100, 0);
+
+                                cursor: pointer;
+                            }
+                        }
+                    }
+
+                }
+            }
+
+            .openCloseDraggable {
+                display: flex;
+
+                margin-top: 10px;
+                margin-left: 2vw;
+
+                button {
+                    display: flex;
+                    align-items: center;
+                    justify-content: flex-start;
+
+                    height: 50px;
+                    width: 370px;
+
+                    background-color: transparent;
+
+                    border: none;
+
+                    font-size: 20px;
+                    font-weight: 700;
+                    color: rgb(0, 100, 0);
+
+                    margin: 0;
+                    padding: 0;
+
+                    cursor: pointer;
+
+                    .openCloseIcon {
+                        font-size: 30px;
+                        border: 2px solid rgb(0, 100, 0);
+                        border-radius: 10px;
+                    }
+                }
+            }
+
+            .downloadButton {
+                display: flex;
+
+                margin-top: 0px;
+                margin-left: 2vw;
+
+                button {
+                    display: flex;
+                    align-items: center;
+                    justify-content: flex-start;
+
+                    height: 50px;
+                    width: 170px;
+
+                    background-color: transparent;
+
+                    border: none;
+
+                    font-size: 20px;
+                    font-weight: 700;
+                    color: rgb(0, 100, 0);
+
+                    margin: 0;
+                    padding: 0;
+
+                    cursor: pointer;
+
+                    .downloadIcon {
+                        font-size: 30px;
+
+                        border: 2px solid rgb(0, 100, 0);
+                        border-radius: 10px;
+                    }
+                }
+            }
+        }
+
+        .board {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            height: 100vh;
+            width: 100vw;
+
+            margin-top: 5vh;
+
+            .field {
+                height: 425px;
+                width: 400px;
+
+                background-image: url(../../Image/Pictures/field.jpg);
+                background-size: 400px 425px;
+
+                border-radius: 30px;
+
+                box-shadow: rgba(0, 0, 0) 0px 0px 20px;
+
+                .player {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    flex-direction: column;
+
+                    height: 25px;
+                    width: 25px;
+
+                    border-radius: 50%;
+                    border: 2px solid black;
+
+                    position: absolute;
+
+                    p {
+                        font-size: 15px;
+                        font-weight: 700;
+                        margin: 27.5px 0px 0px 0px;
+                        padding: 0px;
+                    }
+
+                    .names {
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+
+                        margin: 7.5px 0px 0px 0px;
+
+                        input {
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            text-align: center;
+
+                            height: 15px;
+                            width: 60px;
+
+                            font-size: 10px;
+                            font-weight: 600;
+
+                            border-radius: 10px;
+                            border: 2px solid rgb(0, 100, 0);
+                        }
+                    }
+                }
+            }
+        }
     }
 }

@@ -1,10 +1,10 @@
-import { useEffect, useState, createRef } from "react"
+import { useEffect, useState, createRef, useRef } from "react"
 import { SwatchesPicker } from "react-color"
 import Draggable from "react-draggable";
 import { useScreenshot, createFileName } from 'use-react-screenshot'
 import "./Tactic.scss"
-import { BiLock } from "react-icons/bi";
-import { BiLockOpen } from "react-icons/bi";
+import { BiLock, BiLockOpen } from "react-icons/bi";
+import { FiDownload } from "react-icons/fi";
 
 const Tactic = () => {
 
@@ -164,7 +164,7 @@ const Tactic = () => {
 
 
     // States for player's positions.
-    const positionOne = "Kaleci"
+    const [positionOne, setPositionOne] = useState()
     const [positionTwo, setPositionTwo] = useState()
     const [positionThree, setPositionThree] = useState()
     const [positionFour, setPositionFour] = useState()
@@ -177,13 +177,15 @@ const Tactic = () => {
     const readingPositions = () => {
 
         if (curentFormation === "1-0-5") {
+            setPositionOne("Kaleci")
             setPositionTwo("Merkez-Stoper")
             setPositionThree("Sol-Forvet")
             setPositionFour("Sağ-Forvet")
             setPositionFive("Sol-Santrafor")
-            setPositionSix("Merkez-Santrafor")
-            setPositionSeven("Sağ-Santrafor")
+            setPositionSix("Sağ-Santrafor")
+            setPositionSeven("Merkez-Santrafor")
         } else if (curentFormation === "1-1-4") {
+            setPositionOne("Kaleci")
             setPositionTwo("Merkez-Stoper")
             setPositionThree("Merkez-Göbek-Ortasaha")
             setPositionFour("Sol-Forvet")
@@ -191,6 +193,7 @@ const Tactic = () => {
             setPositionSix("Sol-Santrafor")
             setPositionSeven("Sağ-Santrafor")
         } else if (curentFormation === "1-2-3") {
+            setPositionOne("Kaleci")
             setPositionTwo("Merkez-Stoper")
             setPositionThree("Sol-Göbek-Ortasaha")
             setPositionFour("Sağ-Göbek-Ortasaha")
@@ -198,6 +201,7 @@ const Tactic = () => {
             setPositionSix("Sağ-Forvet")
             setPositionSeven("Merkez-Santrafor")
         } else if (curentFormation === "1-3-2") {
+            setPositionOne("Kaleci")
             setPositionTwo("Merkez-Stoper")
             setPositionThree("Sol-Kanat")
             setPositionFour("Merkez-Göbek-Ortasaha")
@@ -205,6 +209,7 @@ const Tactic = () => {
             setPositionSix("Sol-Santrafor")
             setPositionSeven("Sağ-Santrafor")
         } else if (curentFormation === "1-4-1") {
+            setPositionOne("Kaleci")
             setPositionTwo("Merkez-Stoper")
             setPositionThree("Sol-Kanat")
             setPositionFour("Sol-Göbek-Ortasaha")
@@ -212,6 +217,7 @@ const Tactic = () => {
             setPositionSix("Sağ-Kanat")
             setPositionSeven("Merkez-Santrafor")
         } else if (curentFormation === "1-5-0") {
+            setPositionOne("Kaleci")
             setPositionTwo("Merkez-Stoper")
             setPositionThree("Sol-Kanat")
             setPositionFour("Sol-Göbek-Ortasaha")
@@ -219,6 +225,7 @@ const Tactic = () => {
             setPositionSix("Sağ-Kanat")
             setPositionSeven("Merkez-Ofansif-Ortasaha")
         } else if (curentFormation === "2-0-4") {
+            setPositionOne("Kaleci")
             setPositionTwo("Sol-Stoper")
             setPositionThree("Sağ-Stoper")
             setPositionFour("Sol-Forvet")
@@ -226,6 +233,7 @@ const Tactic = () => {
             setPositionSix("Sağ-Santrafor")
             setPositionSeven("Sağ-Forvet")
         } else if (curentFormation === "2-1-3") {
+            setPositionOne("Kaleci")
             setPositionTwo("Sol-Stoper")
             setPositionThree("Sağ-Stoper")
             setPositionFour("Merkez-Göbek-Ortasaha")
@@ -233,6 +241,7 @@ const Tactic = () => {
             setPositionSix("Sağ-Forvet")
             setPositionSeven("Merkez-Santrafor")
         } else if (curentFormation === "2-2-2") {
+            setPositionOne("Kaleci")
             setPositionTwo("Sol-Stoper")
             setPositionThree("Sağ-Stoper")
             setPositionFour("Sol-Kanat")
@@ -240,6 +249,7 @@ const Tactic = () => {
             setPositionSix("Sol-Santrafor")
             setPositionSeven("Sağ-Santrafor")
         } else if (curentFormation === "2-3-1") {
+            setPositionOne("Kaleci")
             setPositionTwo("Sol-Stoper")
             setPositionThree("Sağ-Stoper")
             setPositionFour("Sol-Kanat")
@@ -247,6 +257,7 @@ const Tactic = () => {
             setPositionSix("Sağ-Kanat")
             setPositionSeven("Merkez-Santrafor")
         } else if (curentFormation === "2-4-0") {
+            setPositionOne("Kaleci")
             setPositionTwo("Sol-Stoper")
             setPositionThree("Sağ-Stoper")
             setPositionFour("Merkez-Defansif-Ortasaha")
@@ -254,6 +265,7 @@ const Tactic = () => {
             setPositionSix("Merkez-Ofansif-Ortasaha")
             setPositionSeven("Sağ-Kanat")
         } else if (curentFormation === "3-0-3") {
+            setPositionOne("Kaleci")
             setPositionTwo("Sol-Bek")
             setPositionThree("Merkez-Stoper")
             setPositionFour("Sağ-Bek")
@@ -261,6 +273,7 @@ const Tactic = () => {
             setPositionSix("Sağ-Forvet")
             setPositionSeven("Merkez-Santrafor")
         } else if (curentFormation === "3-1-2") {
+            setPositionOne("Kaleci")
             setPositionTwo("Sol-Bek")
             setPositionThree("Merkez-Stoper")
             setPositionFour("Sağ-Bek")
@@ -268,6 +281,7 @@ const Tactic = () => {
             setPositionSix("Sol-Santrafor")
             setPositionSeven("Sağ-Santrafor")
         } else if (curentFormation === "3-2-1") {
+            setPositionOne("Kaleci")
             setPositionTwo("Sol-Bek")
             setPositionThree("Merkez-Stoper")
             setPositionFour("Sağ-Bek")
@@ -275,6 +289,7 @@ const Tactic = () => {
             setPositionSix("Sağ-Göbek-Ortasaha")
             setPositionSeven("Merkez-Santrafor")
         } else if (curentFormation === "3-3-0") {
+            setPositionOne("Kaleci")
             setPositionTwo("Sol-Bek")
             setPositionThree("Merkez-Stoper")
             setPositionFour("Sağ-Bek")
@@ -282,6 +297,7 @@ const Tactic = () => {
             setPositionSix("Merkez-Ofansif-Ortasaha")
             setPositionSeven("Sağ-Kanat")
         } else if (curentFormation === "4-0-2") {
+            setPositionOne("Kaleci")
             setPositionTwo("Sol-Bek")
             setPositionThree("Sol-Stoper")
             setPositionFour("Sağ-Stoper")
@@ -289,6 +305,7 @@ const Tactic = () => {
             setPositionSix("Sol-Santrafor")
             setPositionSeven("Sağ-Santrafor")
         } else if (curentFormation === "4-1-1") {
+            setPositionOne("Kaleci")
             setPositionTwo("Sol-Bek")
             setPositionThree("Sol-Stoper")
             setPositionFour("Sağ-Stoper")
@@ -296,6 +313,7 @@ const Tactic = () => {
             setPositionSix("Merkez-Göbek-Ortasaha")
             setPositionSeven("Merkez-Santrafor")
         } else if (curentFormation === "4-2-0") {
+            setPositionOne("Kaleci")
             setPositionTwo("Sol-Bek")
             setPositionThree("Sol-Stoper")
             setPositionFour("Sağ-Stoper")
@@ -303,6 +321,7 @@ const Tactic = () => {
             setPositionSix("Merkez-Defansif-Ortasaha")
             setPositionSeven("Merkez-Ofansif-Ortasaha")
         } else if (curentFormation === "5-1-0") {
+            setPositionOne("Kaleci")
             setPositionTwo("Sol-Bek")
             setPositionThree("Sol-Stoper")
             setPositionFour("Merkez-Stoper")
@@ -310,6 +329,7 @@ const Tactic = () => {
             setPositionSix("Sağ-Bek")
             setPositionSeven("Merkez-Ofansif-Ortasaha")
         } else if (curentFormation === "5-0-1") {
+            setPositionOne("Kaleci")
             setPositionTwo("Sol-Bek")
             setPositionThree("Sol-Stoper")
             setPositionFour("Merkez-Stoper")
@@ -339,6 +359,17 @@ const Tactic = () => {
 
     // State for make disable item's draggability.
     const [checkDraggable, setCheckDraggable] = useState(true)
+
+
+    // Calculating the screen size.
+    const [width, setWidth] = useState()
+    const [height, setHeight] = useState()
+    const windowSize = useRef([window.innerWidth, window.innerHeight]);
+
+    useEffect(() => {
+        setWidth(windowSize.current[0])
+        setHeight(windowSize.current[1])
+    }, [windowSize])
 
 
     // When page is load, function will be start. 
@@ -410,20 +441,20 @@ const Tactic = () => {
                 </section>
 
                 <section className="downloadButton">
-                    <button onClick={downloadScreenshot}>Taktiği indir</button>
+                    <button onClick={downloadScreenshot}>Taktiği indir &nbsp; <FiDownload className="downloadIcon" /></button>
                 </section>
 
             </div>
 
             <div className="board">
                 <div className="field" ref={ref}>
-                    <CreateDraggableItem number="1" role={positionOne} colorOne={chosenColorOne} colorTwo={chosenColorTwo} checkDraggable={checkDraggable} />
-                    <CreateDraggableItem number="2" role={positionTwo} colorOne={chosenColorOne} colorTwo={chosenColorTwo} checkDraggable={checkDraggable} />
-                    <CreateDraggableItem number="3" role={positionThree} colorOne={chosenColorOne} colorTwo={chosenColorTwo} checkDraggable={checkDraggable} />
-                    <CreateDraggableItem number="4" role={positionFour} colorOne={chosenColorOne} colorTwo={chosenColorTwo} checkDraggable={checkDraggable} />
-                    <CreateDraggableItem number="5" role={positionFive} colorOne={chosenColorOne} colorTwo={chosenColorTwo} checkDraggable={checkDraggable} />
-                    <CreateDraggableItem number="6" role={positionSix} colorOne={chosenColorOne} colorTwo={chosenColorTwo} checkDraggable={checkDraggable} />
-                    <CreateDraggableItem number="7" role={positionSeven} colorOne={chosenColorOne} colorTwo={chosenColorTwo} checkDraggable={checkDraggable} />
+                    <CreateDraggableItem number="1" role={positionOne} colorOne={chosenColorOne} colorTwo={chosenColorTwo} checkDraggable={checkDraggable} width={width} height={height} />
+                    <CreateDraggableItem number="2" role={positionTwo} colorOne={chosenColorOne} colorTwo={chosenColorTwo} checkDraggable={checkDraggable} width={width} height={height} />
+                    <CreateDraggableItem number="3" role={positionThree} colorOne={chosenColorOne} colorTwo={chosenColorTwo} checkDraggable={checkDraggable} width={width} height={height} />
+                    <CreateDraggableItem number="4" role={positionFour} colorOne={chosenColorOne} colorTwo={chosenColorTwo} checkDraggable={checkDraggable} width={width} height={height} />
+                    <CreateDraggableItem number="5" role={positionFive} colorOne={chosenColorOne} colorTwo={chosenColorTwo} checkDraggable={checkDraggable} width={width} height={height} />
+                    <CreateDraggableItem number="6" role={positionSix} colorOne={chosenColorOne} colorTwo={chosenColorTwo} checkDraggable={checkDraggable} width={width} height={height} />
+                    <CreateDraggableItem number="7" role={positionSeven} colorOne={chosenColorOne} colorTwo={chosenColorTwo} checkDraggable={checkDraggable} width={width} height={height} />
                 </div>
             </div>
         </div>
@@ -438,7 +469,7 @@ export default Tactic
 
 
 
-const CreateDraggableItem = ({ number, role, colorOne, colorTwo, checkDraggable }) => {
+const CreateDraggableItem = ({ number, role, colorOne, colorTwo, checkDraggable, width, height }) => {
 
     // State for holding the changed positions.
     const [x, setX] = useState()
@@ -452,8 +483,8 @@ const CreateDraggableItem = ({ number, role, colorOne, colorTwo, checkDraggable 
     }
 
 
-    // If-else block for updating the positions.
-    const updateRole = () => {
+    // If-else block for updating the Laptop positions.
+    const updateRoleMid = () => {
 
         if (role === "Kaleci") {
             setX(270)
@@ -496,7 +527,7 @@ const CreateDraggableItem = ({ number, role, colorOne, colorTwo, checkDraggable 
             setY(190)
         } else if (role === "Merkez-Ofansif-Ortasaha") {
             setX(268)
-            setY(190)
+            setY(175)
         } else if (role === "Sağ-Ofansif-Ortasaha") {
             setX(370)
             setY(190)
@@ -526,16 +557,90 @@ const CreateDraggableItem = ({ number, role, colorOne, colorTwo, checkDraggable 
             setY(125)
         }
     }
+    // If-else block for updating the Mobile positions.
+    const updateRoleMobile = () => {
+
+        if (role === "Kaleci") {
+            setX(182.5)
+            setY(310)
+        } else if (role === "Sol-Stoper") {
+            setX(115)
+            setY(230)
+        } else if (role === "Merkez-Stoper") {
+            setX(182.5)
+            setY(230)
+        } else if (role === "Sağ-Stoper") {
+            setX(250)
+            setY(230)
+        } else if (role === "Sol-Bek") {
+            setX(65)
+            setY(190)
+        } else if (role === "Sağ-Bek") {
+            setX(305)
+            setY(190)
+        } else if (role === "Sol-Defansif-Ortasaha") {
+            setX(120)
+            setY(190)
+        } else if (role === "Merkez-Defansif-Ortasaha") {
+            setX(182.5)
+            setY(190)
+        } else if (role === "Sağ-Defansif-Ortasaha") {
+            setX(240)
+            setY(190)
+        } else if (role === "Sol-Göbek-Ortasaha") {
+            setX(137.5)
+            setY(135)
+        } else if (role === "Merkez-Göbek-Ortasaha") {
+            setX(182.5)
+            setY(135)
+        } else if (role === "Sağ-Göbek-Ortasaha") {
+            setX(230)
+            setY(135)
+        } else if (role === "Sol-Ofansif-Ortasaha") {
+            setX(120)
+            setY(100)
+        } else if (role === "Merkez-Ofansif-Ortasaha") {
+            setX(182.5)
+            setY(100)
+        } else if (role === "Sağ-Ofansif-Ortasaha") {
+            setX(240)
+            setY(100)
+        } else if (role === "Sol-Kanat") {
+            setX(70)
+            setY(135)
+        } else if (role === "Sağ-Kanat") {
+            setX(300)
+            setY(135)
+        } else if (role === "Sol-Forvet") {
+            setX(80)
+            setY(100)
+        } else if (role === "Merkez-Forvet") {
+            setX(182.5)
+            setY(90)
+        } else if (role === "Sağ-Forvet") {
+            setX(287.5)
+            setY(100)
+        } else if (role === "Sol-Santrafor") {
+            setX(130)
+            setY(70)
+        } else if (role === "Merkez-Santrafor") {
+            setX(182.5)
+            setY(45)
+        } else if (role === "Sağ-Santrafor") {
+            setX(235)
+            setY(70)
+        }
+    }
 
 
     // Styles for update the player's color.
     const nonDraggableStyle = {
         background: `linear-gradient(90deg, ${colorOne.backgroundColor} 50%, ${colorTwo.backgroundColor} 50%)`,
-        cursor: "text",
+        cursor: "no-drop",
     }
     const draggableStyle = {
         background: `linear-gradient(90deg, ${colorOne.backgroundColor} 50%, ${colorTwo.backgroundColor} 50%)`,
-        cursor: "pointer",
+        cursor: "move",
     }
     const numberStyleDark = {
         color: "black"
@@ -547,9 +652,9 @@ const CreateDraggableItem = ({ number, role, colorOne, colorTwo, checkDraggable 
 
     // When formation change, this useEffect will update the roles.
     useEffect(() => {
-        updateRole()
+        (width + height) > 1800 && updateRoleMid();
+        ((width + height) < 1800 && (width + height) > 1000) && updateRoleMobile();
     }, [role])
-
 
     return (
         <Draggable

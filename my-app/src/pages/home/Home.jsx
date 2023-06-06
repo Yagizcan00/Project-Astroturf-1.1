@@ -160,7 +160,6 @@ const Home = () => {
     return (
         <div className='home'>
             <div className='slider'>
-
                 <div className='images'>
 
 
@@ -232,7 +231,6 @@ const Home = () => {
                     {/* <button><TbArrowBigRightLineFilled className='icon' onClick={() => handleIncrease()} /></button> */}
                 </div>
 
-
                 <div className='texts'>
                     {
                         textlist.map(textItem => {
@@ -245,7 +243,6 @@ const Home = () => {
                     }
                     {/* <p className='p'>{textlist[currentItemID - 1].text}</p> */}
                 </div>
-
 
                 <div className='list'>
                     <TbArrowBigLeftLineFilled className='icon' onClick={() => handleDecrease()} />
@@ -261,7 +258,6 @@ const Home = () => {
                     }
                     <TbArrowBigRightLineFilled className='icon' onClick={() => handleIncrease()} />
                 </div>
-
             </div>
         </div>
     )

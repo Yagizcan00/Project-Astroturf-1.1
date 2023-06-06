@@ -344,7 +344,7 @@ const Tactic = () => {
 
     // Download the div's screenshot part
     const ref = createRef(null);
-    const [takeScreenShot] = useScreenshot({
+    const [image, takeScreenShot] = useScreenshot({
         type: "image/jpeg",
         quality: 1.0
     });

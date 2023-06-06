@@ -1,5 +1,5 @@
 # Project-Astroturf-2.0
 
--> Thats one is new version of my Astroturf Project.
+-> This project BETA's done.
 
 https://seventoseventwo.netlify.app/

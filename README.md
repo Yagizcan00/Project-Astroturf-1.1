@@ -2,7 +2,7 @@
 
 # Seven-to-Seven
 
-Programın linki: https://seventoseventwo.netlify.app/
+Programın linki: https://seventoseven.netlify.app/
 
 Bu projeyi arkadaşlarım ile eğlenmek için geliştirdim. Programın amacı, genellikle yedi kişi olarak oynanan halısaha maçları öncesinde takımlarınızın taktiklerini planlayabilmek ve bunu yaparken kendimizi biraz daha profesyonel bir teknik direktör gibi hissedebilmek.
 

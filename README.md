@@ -1,5 +1,3 @@
-# Project-Astroturf-1.1
-
 # Seven-to-Seven
 
 Programın linki: https://seventoseven.netlify.app/
